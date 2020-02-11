@@ -1,6 +1,6 @@
 userList = document.getElementById("list");
 
-fetch("http://localhost:3002/states.json")
+fetch("http://localhost:3001/states.json")
   .then(response => response.json())
   // .then(response => console.log(response))
   .then(states =>

@@ -13,11 +13,16 @@
         <div id=buttonContainer>
             <button id=newUser> New User </button>
             <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
-                <input type="text" name="fistName" id="fistName" placeholder="First Name">
-                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-                <select name="states" id="states">
+                <label for="first_name"></label>
+                <input type="text" name="first_name" id="first_name" placeholder="First Name">
+
+                <label for="last_name"></label>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                
+                <select name="current_state" id="states">
                     <option value="" selected disabled hidden>Select a State</option>
                 </select>
+                <input type="submit" value="Submit">
             </form>
     
             <button id = existingUser>Existing User </button>
