@@ -34,4 +34,3 @@ document.getElementById("newUser").addEventListener("click", function() {
   form.style.visibility =
     form.style.visibility == "visible" ? "hidden" : "visible";
 });
-
