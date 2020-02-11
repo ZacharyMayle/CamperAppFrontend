@@ -67,35 +67,35 @@ body {
 }
 
 header {
-    display: flex;
     background-color: rgba(247, 224, 150, 0.849);
-    
-    padding: 1.5%;
     backdrop-filter: blur(5px);
+    padding: 1%;
+    position: sticky;
+    justify-content: flex-start;
+    align-content: center;
+    display: flex;
 }
 
 #logoContent {
-    /* display: flex; */
+    display: flex;
+    /* justify-content: start; */
     /* flex-direction: row; */
     /* height: 200px;
     width: 25%; */
-    background-color: powderblue;
+    /* position: relative; */
 }
 
 #logo {
-    background-color: teal;
-    display: inline;
-    justify-content: center;
+   float: left;
 }
 
 #appName {
     font-family: 'Fugaz One', cursive;
     font-size: 2rem;
-    /* top: 10px; */
-    /* align-content: center; */
-    background-color: red;
+    margin-top: 10px;
+    float: right;
     /* vertical-align: middle; */
-    display: inline;
+    /* display: inline-flex; */
 }
 
 #modalBox {
