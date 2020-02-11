@@ -35,3 +35,7 @@ document.getElementById("newUser").addEventListener("click", function() {
     form.style.visibility == "visible" ? "hidden" : "visible";
 });
 
+//            Controls for the hamburger
+function myFunction(x) {
+    x.classList.toggle("change");
+  }

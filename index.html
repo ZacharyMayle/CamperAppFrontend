@@ -6,12 +6,20 @@
     <title>Camper!</title>
     <!-- <script src="index.js" defer></script> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="header">
+
         <div id=buttonContainer>
-            <button id=newUser> New User </button>
+            <div class="hamburger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+              
+            <!-- <button id=newUser> New User </button>
             <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
                 <label for="first_name"></label>
                 <input type="text" name="first_name" id="first_name" placeholder="First Name">
@@ -25,7 +33,7 @@
                 <input type="submit" value="Submit">
             </form>
     
-            <button id = existingUser>Existing User </button>
+            <button id = existingUser>Existing User </button> -->
     
             <!-- <div id="modalBox" style="visibility:hidden;">
                 <ul id=list>
