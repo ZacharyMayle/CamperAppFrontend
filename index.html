@@ -17,8 +17,23 @@
 
     <div id=buttonContainer>
         <button id=newUser> New User </button>
+        <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
+            <input type="text" name="fistName" id="fistName" placeholder="First Name">
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            <select name="states" id="states">
+                <option value="" selected disabled hidden>Select a State</option>
+            </select>
+
+        </form>
+
         <button id = existingUser>Existing User </button>
-        <div id=modalBox></div>
+
+        <div id=modalBox style="visibility:hidden;">
+            <ul id=list>
+                
+            </ul>
+        </div>
+
     </div>
 
     <form id="searchBarForm">
