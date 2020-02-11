@@ -10,37 +10,50 @@
 </head>
 <body>
     <header id="header">
-        <img id="logo" src="https://img.icons8.com/bubbles/50/000000/campfire.png">
-        <h1 id="appName">Camper</h1>
+        <div id=buttonContainer>
+            <button id=newUser> New User </button>
+            <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
+                <input type="text" name="fistName" id="fistName" placeholder="First Name">
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+                <select name="states" id="states">
+                    <option value="" selected disabled hidden>Select a State</option>
+                </select>
+            </form>
+    
+            <button id = existingUser>Existing User </button>
+    
+            <div id="modalBox" style="visibility:hidden;">
+                <ul id=list>
+                </ul>
+            </div>
+        </div>
+    
+        <div id="logoContent">
+            <img id="logo" src="https://img.icons8.com/bubbles/50/000000/campfire.png">
+            <h1 id="appName">Camper</h1>
+        </div>
     </header>
 
 
-    <div id=buttonContainer>
-        <button id=newUser> New User </button>
-        <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
-            <input type="text" name="fistName" id="fistName" placeholder="First Name">
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-            <select name="states" id="states">
-                <option value="" selected disabled hidden>Select a State</option>
-            </select>
+    <main id="content">
+        <div id="user-info">
 
-        </form>
+        </div>
+        <div id="content-info">
 
-        <button id = existingUser>Existing User </button>
-
-        <div id=modalBox style="visibility:hidden;">
-            <ul id=list>
-                
-            </ul>
         </div>
 
-    </div>
+    </main>
+    
 
-    <form id="searchBarForm">
-        <input type="text" name="search" id="search" placeholder="Enter a State, Park, Campground, ...">
-        <input type="submit" value="Search">
-    </form>
-        
+    <!-- <div id="searchBarDiv">
+        <form id="searchBarForm">
+            <input type="text" name="search" id="search" placeholder="Search...">
+            <button class="button" type="submit" value="Search">
+        </form>
+    </div> -->
+    
+
 <script src="./index.js"></script>
 </body>
 </html>

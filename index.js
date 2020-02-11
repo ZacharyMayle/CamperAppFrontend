@@ -1,6 +1,6 @@
 userList = document.getElementById("list");
 
-fetch("http://localhost:3000/states.json")
+fetch("http://localhost:3002/states.json")
   .then(response => response.json())
   // .then(response => console.log(response))
   .then(states =>
@@ -14,7 +14,7 @@ fetch("http://localhost:3000/states.json")
     })
   );
 
-fetch("http://localhost:3002/users")
+fetch("http://localhost:3000/users")
   .then(response => response.json())
   .then(users => {
     users.map(user => {
@@ -35,3 +35,4 @@ document.getElementById("newUser").addEventListener("click", function() {
   form.style.visibility =
     form.style.visibility == "visible" ? "hidden" : "visible";
 });
+
