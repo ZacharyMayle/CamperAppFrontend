@@ -1,6 +1,5 @@
 const userInfo = document.getElementById("user-info");
 console.log("hello", userInfo);
-
 fetch("http://localhost:3000/user_campgrounds")
   .then(response => response.json())
   // .then(response => console.log(response))
