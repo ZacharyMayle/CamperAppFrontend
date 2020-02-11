@@ -60,7 +60,7 @@ html {
 
 header {
     display: flex;
-    background-color: rgba(247, 224, 150, 0.849);
+    background-color: rgba(247, 224, 150, 0.849
     justify-content: center;
     padding: 1.5%;
     backdrop-filter: blur(5px);
@@ -87,3 +87,7 @@ body {
         background-size: cover;
         position: relative;
 } */
+
+#modalBox {
+    background-color: brown;
+}
