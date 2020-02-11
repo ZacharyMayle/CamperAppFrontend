@@ -60,7 +60,7 @@ html {
 
 header {
     display: flex;
-    background-color: rgba(252, 208, 119, 0.685);
+    background-color: rgba(247, 224, 150, 0.849);
     justify-content: center;
     padding: 1.5%;
     backdrop-filter: blur(5px);
@@ -71,7 +71,13 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
 }
+#appName {
+    font-family: 'Fugaz One', cursive;
+    font-size: 2rem;
+    position: relative;
+    top: 10px;
 
+}
 /* #hero-image {
         background-image: url("/w3images/photographer.jpg");
         background-color: #cccccc;
