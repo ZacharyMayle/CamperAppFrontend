@@ -78,16 +78,45 @@ body {
     top: 10px;
 
 }
-/* #hero-image {
-        background-image: url("/w3images/photographer.jpg");
-        background-color: #cccccc;
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-} */
 
 #modalBox {
     background-color: brown;
+}
+
+#searchBarForm {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 12rem;
+}
+
+/* #search {
+    border-radius: 10px;
+    text-align: center;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.897);
+} */
+
+#search {
+    /* color: rgb(233, 223, 223); */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-transform: none;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    height: 1rem;
+    width: 40rem;
+    line-height: 24px;
+    text-shadow: none;
+    border-radius: 10px;
+    text-align: center;
 }
