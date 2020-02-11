@@ -15,8 +15,20 @@
     <!-- <img id="hero-image" src="https://www.elsetge.cat/myimg/f/101-1010425_pine-forest-high-resolution.jpg" alt="Mountain"> -->
     <div id=buttonContainer>
         <button id=newUser> New User </button>
+        <form action="http://localhost:3000/users" method="post" id="modalForm" style="visibility:hidden;">
+            <input type="text" name="fistName" id="fistName" placeholder="First Name">
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            <select name="states" id="states">
+                <option value="" selected disabled hidden>Select a State</option>
+                <option value="VT">VT</option>
+                <option value="FL">FL</option>
+                <option value="CO">CO</option>
+            </select>
+
+        </form>
+
         <button id = existingUser>Existing User </button>
-        <div id=modalBox></div>
+        <div id=modalBox style="visibility:hidden;"></div>
 
     </div>
         
