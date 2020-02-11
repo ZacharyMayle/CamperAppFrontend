@@ -1,6 +1,6 @@
 const userList = document.getElementById("list");
 
-fetch("http://localhost:3001/states.json")
+fetch("http://localhost:3003/states.json")
   .then(response => response.json())
   .then(states =>
     Object.keys(states).map(state => {
@@ -16,6 +16,7 @@ fetch("http://localhost:3001/states.json")
 fetch("http://localhost:3000/users")
   .then(response => response.json())
   .then(users => {
+    // console.log(users)
     users.map(user => {
       let li = document.createElement("li");
       li.innerHTML = `${user.first_name} ${user.last_name}`;
