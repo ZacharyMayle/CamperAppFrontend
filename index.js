@@ -1,9 +1,12 @@
+userList = document.getElementById("list");
+
 fetch("http://localhost:3002/users")
   .then(response => response.json())
   .then(users => {
     users.map(user => {
-      let box = document.getElementById("modalBox");
-      box.innerHTML = `${user.first_name} ${user.last_name}`;
+      let li = document.createElement("li");
+      li.innerHTML = `${user.first_name} ${user.last_name}`;
+      userList.append(li)
     });
   });
 
