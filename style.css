@@ -124,3 +124,7 @@ header {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: rgb(87, 87, 87);
   }
+
+#user-info {
+    background-color: white;
+}
