@@ -1,3 +1,4 @@
+const contentInfo = document.getElementById("content-info");
 const userInfo = document.getElementById("user-info");
 const searchParams = new URLSearchParams(window.location.search);
 const query_user = searchParams.get("user_id");
@@ -25,4 +26,26 @@ fetch("http://localhost:3000/user_campgrounds/")
         li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
         userInfo.appendChild(li);
       });
+  });
+
+  fetch("http://localhost:3000/parks")
+  .then(response => response.json())
+  .then(parks => {
+    parks.map(park => {
+      let li1 = document.createElement("li");
+      let li2 = document.createElement("li");
+      li2.innerText = `
+        Campgrounds Available: ${park.campgrounds.length}
+      `;
+
+      li1.innerHTML = `
+        <a href ='content.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+      `;
+
+      li1.class = "li-1";
+      li2.class = "li-2";
+
+      contentInfo.appendChild(li1);
+      li1.appendChild(li2);
+    });
   });
