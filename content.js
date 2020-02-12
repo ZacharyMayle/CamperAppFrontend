@@ -18,15 +18,27 @@ fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {
     parks.map(park => {
-      let li = document.createElement("li");
-      li.innerHTML = `<a href ='content.html?id=${park.id}'> ${park.name} - ${park.designation}</a>`;
+      let li1 = document.createElement("li");
+      console.log(park);
+      let li2 = document.createElement("li");
+      li2.innerText = `
+        Campgrounds Available: ${park.campgrounds.length}
+      `;
 
-      contentInfo.appendChild(li);
+      li1.innerHTML = `
+        <a href ='content.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+      `;
+
+      li1.class="li-1"
+      li2.class="li-2"
+
+      contentInfo.appendChild(li1);
+      li1.appendChild(li2)
     });
   });
 
 window.addEventListener("load", function() {
-  if (window.location.href != "http://localhost:3005/content.html") {
+  if (window.location.href != "http://localhost:3001/content.html") {
     let list1 = document.getElementById("parks");
     let list2 = document.getElementById("park-with-campgrounds");
     list1.style.visibility = "hidden";
@@ -42,20 +54,20 @@ function someFunction() {
       let h3 = document.createElement("h3");
       h3.innerText = park.name;
       campContentInfo.append(h3);
-    //   console.log(park.campgrounds.length)
 
       if (park.campgrounds.length != 0) {
-          park.campgrounds.map(campground =>{
-              let li = document.createElement("li");
-              li.innerText = `${campground.name}`;
-              campContentInfo.appendChild(li);
-          })
+        park.campgrounds.map(campground => {
+          let li = document.createElement("li");
+          li.innerHTML = `<a href=http://localhost:3001/camp-content.html?id=${campground.id}>${campground.name}</a>`;
+
+          campContentInfo.appendChild(li);
+        });
       }
     });
 }
 
 window.addEventListener("load", function() {
-  if (window.location.href != "http://localhost:3005/content.html") {
+  if (window.location.href != "http://localhost:3001/content.html") {
     someFunction();
   }
 });

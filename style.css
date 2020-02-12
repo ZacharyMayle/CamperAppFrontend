@@ -119,6 +119,11 @@ header .container #logoContent {
     padding: 5rem;
 }
 
+#campground-info {
+  background-color: white;
+  padding: 5rem;
+}
+
 #camp-content-info {
     background-color: white;
     padding: 5rem;
@@ -127,6 +132,15 @@ header .container #logoContent {
 h3 {
     text-align: center;
     background-color: bisque;
+}
+
+p {
+  padding: 1rem;
+  padding-left: 0;
+}
+
+.li-1, .li-2 {
+  color:red
 }
 /*--------------------------------------------------------------------------------------*/
 

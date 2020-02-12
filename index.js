@@ -1,5 +1,5 @@
 const userList = document.getElementById("list");
-fetch("http://localhost:3005/states.json")
+fetch("http://localhost:3001/states.json")
   .then(response => response.json())
   .then(states =>
     Object.keys(states).map(state => {
