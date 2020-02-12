@@ -101,9 +101,12 @@ header .container #logoContent {
   color: rgb(87, 87, 87);
 } */
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
   color: rgb(87, 87, 87);
 }
+
+/*                        ----Main Conntent Style---                          */
+
 
 #content {
     display: flex;
@@ -146,6 +149,7 @@ p {
 }
 /*--------------------------------------------------------------------------------------*/
 
+/*                            -----Hamburger Animation-----                             */
 
 .hamburger {
   cursor: pointer;
@@ -171,67 +175,9 @@ p {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
+#dropdown {
   position: relative;
-  display: inline-block;
+  display: flexbox;
+  background-color: rgba(247, 224, 150, 0.849);
+  max-width: 20%;
 }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.hamburger:hover .dropdown-content {display: block;}
-
-/* .hamburger:hover .hamburger {background-color: #3e8e41;} */
