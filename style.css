@@ -1,10 +1,10 @@
-
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
-    background: url(https://www.elsetge.cat/myimg/f/101-1010425_pine-forest-high-resolution.jpg) no-repeat center center fixed; 
+  background: url(https://www.elsetge.cat/myimg/f/101-1010425_pine-forest-high-resolution.jpg)
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,46 +12,46 @@ html {
 }
 
 body {
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 /*             HEADER SECTION                */
 
 header {
-    background-color: rgba(247, 224, 150, 0.849);
-    backdrop-filter: blur(5px);
-    /* display: flexbox; */
-    position: -webkit-sticky;
-    position: sticky;
-    /* top: 20px; */
-    overflow: hidden;
-    /* flex-flow: row; */
-    /* padding: 20px 10px; */
-    /* padding: 1%; */
-    /* justify-content: center; */
-    /* align-content: center; */
+  background-color: rgba(247, 224, 150, 0.849);
+  backdrop-filter: blur(5px);
+  /* display: flexbox; */
+  position: -webkit-sticky;
+  position: sticky;
+  /* top: 20px; */
+  overflow: hidden;
+  /* flex-flow: row; */
+  /* padding: 20px 10px; */
+  /* padding: 1%; */
+  /* justify-content: center; */
+  /* align-content: center; */
 }
 
 .container {
-	max-width: 100%;
-	padding: 20px;
-	margin: 0 auto;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 header .container {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 header .container #logoContent {
   justify-content: center;
 }
 
 #logoContent {
-    display: flex;
-    
-    margin-left: 35%;
+  display: flex;
+
+  margin-left: 35%;
 }
 
 #hamburger {
@@ -59,13 +59,12 @@ header .container #logoContent {
   display: flex;
 }
 
-
 #logo {
   float: left;
 }
 
 #appName {
-  font-family: 'Fugaz One', cursive;
+  font-family: "Fugaz One", cursive;
   font-size: 2rem;
   margin-top: 10px;
   float: right;
@@ -77,10 +76,7 @@ header .container #logoContent {
   background-color: brown;
 }
 
-
 /*               END OF HEADER SECTION                 */
-
-
 
 /* #searchBarDiv {
   display: flex;
@@ -101,27 +97,26 @@ header .container #logoContent {
   color: rgb(87, 87, 87);
 } */
 
-::placeholder { 
+::placeholder {
   color: rgb(87, 87, 87);
 }
 
 /*                        ----Main Conntent Style---                          */
 
-
 #content {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20rem;
 }
 
 #user-info {
-    background-color: white;
-    padding: 5rem;
+  background-color: white;
+  padding: 5rem;
 }
 
 #content-info {
-    background-color: white;
-    padding: 5rem;
+  background-color: white;
+  padding: 5rem;
 }
 
 #campground-info {
@@ -130,13 +125,13 @@ header .container #logoContent {
 }
 
 #camp-content-info {
-    background-color: white;
-    padding: 5rem;
+  background-color: white;
+  padding: 5rem;
 }
 
 h3 {
-    text-align: center;
-    background-color: bisque;
+  text-align: center;
+  background-color: bisque;
 }
 
 p {
@@ -144,8 +139,9 @@ p {
   padding-left: 0;
 }
 
-.li-1, .li-2 {
-  color:red
+.li-1,
+.li-2 {
+  color: red;
 }
 /*--------------------------------------------------------------------------------------*/
 
@@ -155,7 +151,9 @@ p {
   cursor: pointer;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 35px;
   height: 5px;
   background-color: #333;
@@ -168,7 +166,9 @@ p {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+  opacity: 0;
+}
 
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);

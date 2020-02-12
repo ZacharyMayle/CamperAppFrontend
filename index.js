@@ -16,7 +16,7 @@ fetch("http://localhost:3000/users")
     // console.log(users)
     users.map(user => {
       let li = document.createElement("li");
-      li.innerHTML = `<a href="content.html">${user.first_name} ${user.last_name}</a>`;
+      li.innerHTML = `<a href="content.html?user_id=${user.id}">${user.first_name} ${user.last_name}</a>`;
       userList.append(li);
     });
   });
@@ -31,16 +31,13 @@ document.getElementById("newUser").addEventListener("click", function() {
     form.style.visibility == "visible" ? "hidden" : "visible";
 });
 
-
 //            Controls for the hamburger
 
-
 function myFunction(x) {
-  // const dropdown = document.querySelector("#dropdown") 
-    x.classList.toggle("change")
+  // const dropdown = document.querySelector("#dropdown")
+  x.classList.toggle("change");
 
-    const div = document.getElementById("dropdown")
-    div.style.visibility = 
-      div.style.visibility == "hidden" ? "visible" : "hidden"
-  }
-
+  const div = document.getElementById("dropdown");
+  div.style.visibility =
+    div.style.visibility == "hidden" ? "visible" : "hidden";
+}
