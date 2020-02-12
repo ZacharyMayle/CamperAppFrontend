@@ -74,8 +74,30 @@ header {
     color: rgb(87, 87, 87);
   }
 
+#content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20rem;
+}
+
 #user-info {
     background-color: white;
+    padding: 5rem;
+}
+
+#content-info {
+    background-color: white;
+    padding: 5rem;
+}
+
+#camp-content-info {
+    background-color: white;
+    padding: 5rem;
+}
+
+h3 {
+    text-align: center;
+    background-color: bisque;
 }
 /*--------------------------------------------------------------------------------------*/
 
