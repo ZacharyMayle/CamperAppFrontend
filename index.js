@@ -31,16 +31,13 @@ document.getElementById("newUser").addEventListener("click", function() {
     form.style.visibility == "visible" ? "hidden" : "visible";
 });
 
-
 //            Controls for the hamburger
 
-
 function myFunction(x) {
-  // const dropdown = document.querySelector("#dropdown") 
-    x.classList.toggle("change")
+  // const dropdown = document.querySelector("#dropdown")
+  x.classList.toggle("change");
 
-    const div = document.getElementById("dropdown")
-    div.style.visibility = 
-      div.style.visibility == "hidden" ? "visible" : "hidden"
-  }
-
+  const div = document.getElementById("dropdown");
+  div.style.visibility =
+    div.style.visibility == "hidden" ? "visible" : "hidden";
+}

@@ -29,11 +29,11 @@ fetch("http://localhost:3000/parks")
         <a href ='content.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
 
-      li1.class="li-1"
-      li2.class="li-2"
+      li1.class = "li-1";
+      li2.class = "li-2";
 
       contentInfo.appendChild(li1);
-      li1.appendChild(li2)
+      li1.appendChild(li2);
     });
   });
 
@@ -52,7 +52,7 @@ function someFunction() {
     .then(park => {
       console.log(park);
       let h3 = document.createElement("h3");
-      h3.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`
+      h3.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`;
       campContentInfo.append(h3);
 
       if (park.campgrounds.length != 0) {
@@ -71,4 +71,3 @@ window.addEventListener("load", function() {
     someFunction();
   }
 });
-
