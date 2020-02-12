@@ -26,7 +26,7 @@ fetch("http://localhost:3000/parks")
   });
 
 window.addEventListener("load", function() {
-  if (window.location.href != "http://localhost:3005/content.html") {
+  if (window.location.href != "http://localhost:3001/content.html") {
     let list1 = document.getElementById("parks");
     let list2 = document.getElementById("park-with-campgrounds");
     list1.style.visibility = "hidden";
@@ -55,7 +55,7 @@ function someFunction() {
 }
 
 window.addEventListener("load", function() {
-  if (window.location.href != "http://localhost:3005/content.html") {
+  if (window.location.href != "http://localhost:3001/content.html") {
     someFunction();
   }
 });
