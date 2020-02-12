@@ -1,5 +1,5 @@
 const userList = document.getElementById("list");
-fetch("http://localhost:3005/states.json")
+fetch("http://localhost:3001/states.json")
   .then(response => response.json())
   .then(states =>
     Object.keys(states).map(state => {
@@ -34,7 +34,16 @@ document.getElementById("newUser").addEventListener("click", function() {
 
 //            Controls for the hamburger
 
+
 function myFunction(x) {
-    x.classList.toggle("change");
+  const dropdown = document.querySelector("#dropdown") 
+    x.classList.toggle("change")
+
+    const div = document.getElementById("dropdown")
+    div.style.visibility = 
+      div.style.visibility == "hidden" ? "visible" : "hidden"
+    // div.class = "buttonBlock"
+    // dropdown.appendChild(div)
+
   }
 

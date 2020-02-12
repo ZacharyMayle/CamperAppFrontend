@@ -1,7 +1,9 @@
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 
 html {
-    font-family: 'Montserrat', sans-serif;
     background: url(https://www.elsetge.cat/myimg/f/101-1010425_pine-forest-high-resolution.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -80,7 +82,7 @@ header .container #logoContent {
 
 
 
-#searchBarDiv {
+/* #searchBarDiv {
   display: flex;
   position: relative;
   justify-content: center;
@@ -97,7 +99,7 @@ header .container #logoContent {
   font-size: 17px;
   background-image: linear-gradient(to right , #ffffff , #ffffff);
   color: rgb(87, 87, 87);
-}
+} */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(87, 87, 87);
@@ -218,4 +220,4 @@ h3 {
 
 .hamburger:hover .dropdown-content {display: block;}
 
-.hamburger:hover .hamburger {background-color: #3e8e41;}
+/* .hamburger:hover .hamburger {background-color: #3e8e41;} */
