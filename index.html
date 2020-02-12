@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Camper!</title>
-    <!-- <script src="index.js" defer></script> -->
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
@@ -12,61 +11,86 @@
 </head>
 <body>
     <header id="header">
-
-        <div id=buttonContainer>
-            <div class="hamburger" onclick="myFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-              </div>
+        <div class="container">
+        <!--    <div id=buttonContainer> -->
+                    <div class="hamburger" onclick="myFunction(this)">
+                     <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
               
-              <button id="newUser">New User</button>
-              <form
-                action="http://localhost:3000/users"
-                method="post"
-                id="modalForm"
-                style="visibility:hidden;"
-              >
-                <label for="first_name"></label>
-                <input
-                  type="text"
-                  name="first_name"
-                  id="first_name"
-                  placeholder="First Name"
-                />
-                <label for="last_name"></label>
-                <input
-                  type="text"
-                  name="last_name"
-                  id="last_name"
-                  placeholder="Last Name"
-                />
-                <select name="current_state" id="states">
-                  <option value="" selected disabled hidden>Select a State</option>
-                </select>
+                    
+                    <div id="logoContent">
+                        <img id="logo" src="https://img.icons8.com/bubbles/50/000000/campfire.png">
+                        <h1 id="appName">Camper</h1>
+                    </div>
+                </div>
+            </header>
 
-                <input type="submit" value="Submit" />
-              </form>
-              <button id="existingUser">Existing User</button>
-              <div id="modalBox" style="visibility:hidden;">
-                  <ul id=list>
-                  </ul>
-              </div>
-    
-        <div id="logoContent">
-            <img id="logo" src="https://img.icons8.com/bubbles/50/000000/campfire.png">
-            <h1 id="appName">Camper</h1>
-        </div>
-    </header>
-
-
-    <!-- <div id="searchBarDiv">
-        <form id="searchBarForm">
-            <input type="text" name="search" id="search" placeholder="Search...">
-            <button class="button" type="submit" value="Search">
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+            
+            <script src="./index.js"></script>
+        </body>
+        </html>
+        
+        
+        
+        
+        
+        
+        <!-- Land of commented out code  -->
+        
+        
+        
+        <!-- <button id="newUser">New User</button>
+            <form
+            action="http://localhost:3000/users"
+            method="post"
+            i   d="modalForm"
+            style="visibility:hidden;"
+            >
+            <label for="first_name"></label>
+            <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            placeholder="First Name"
+            />
+            <label for="last_name"></label>
+            <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            placeholder="Last Name"
+            />
+            <select name="current_state" id="states">
+                <option value="" selected disabled hidden>Select a State</option>
+            </select>
+            
+            <input type="submit" value="Submit" />
         </form>
-    </div> -->
-
-    <script src="./index.js"></script>
-  </body>
-</html>
+        <button id="existingUser">Existing User</button>
+        <div id="modalBox" style="visibility:hidden;">
+            <ul id=list>
+            </ul>
+        </div> -->
+        
+        
+        
+        
+        
+        
+        
+        <!-- <div id="searchBarDiv">
+            <form id="searchBarForm">
+                <input type="text" name="search" id="search" placeholder="Search...">
+                <button class="button" type="submit" value="Search">
+                </form>
+            </div> -->
