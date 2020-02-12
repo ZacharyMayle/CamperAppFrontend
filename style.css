@@ -103,10 +103,23 @@ header .container #logoContent {
 
 /*                        ----Main Conntent Style---                          */
 
-#content {
+#content-wrapper {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 20rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 50px; */
+}
+
+.content {
+  display: block;
+  background-color:red;
+  width: 30%;
+  height: 30%;
+  /* margin: 5%; */
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
 }
 
 #user-info {
