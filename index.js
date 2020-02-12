@@ -16,7 +16,7 @@ fetch("http://localhost:3000/users")
     // console.log(users)
     users.map(user => {
       let li = document.createElement("li");
-      li.innerHTML = `<a href="content.html">${user.first_name} ${user.last_name}</a>`;
+      li.innerHTML = `<a href="content.html?user_id=${user.id}">${user.first_name} ${user.last_name}</a>`;
       userList.append(li);
     });
   });

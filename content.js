@@ -2,24 +2,33 @@ const userInfo = document.getElementById("user-info");
 const contentInfo = document.getElementById("content-info");
 const campContentInfo = document.getElementById("camp-content-info");
 const searchParams = new URLSearchParams(window.location.search);
-const query = searchParams.get("id");
+const query_user = searchParams.get("user_id");
+const query_id = searchParams.get("id");
 
-fetch("http://localhost:3000/user_campgrounds")
+// function filterUserReservations(res){
+//   let user_res = reservations.filter(reservation => {
+//     return reservation.user_id==query_user
+// }
+fetch('http://localhost:3000/user_campgrounds/')
   .then(response => response.json())
-  .then(user_campgrounds => {
-    user_campgrounds.map(reservation => {
-      let li = document.createElement("li");
-      li.innerText = `${reservation.campground.name} - ${reservation.camping_duration}`;
-      userInfo.appendChild(li);
-    });
-  });
+  .then(reservations => {
+    // console.log(reservations)
+    let user_res = reservations.filter(reservation => {
+      return reservation.user_id==query_user
+    }).map(stays => {
+      console.log(stays)
+      let li = document.createElement('li')
+      li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`
+      userInfo.appendChild(li)
+    })
+  })
+
 
 fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {
     parks.map(park => {
       let li1 = document.createElement("li");
-      console.log(park);
       let li2 = document.createElement("li");
       li2.innerText = `
         Campgrounds Available: ${park.campgrounds.length}
@@ -47,7 +56,7 @@ window.addEventListener("load", function() {
 });
 
 function someFunction() {
-  fetch(`http://localhost:3000/parks/${query}`)
+  fetch(`http://localhost:3000/parks/${query_id}`)
     .then(response => response.json())
     .then(park => {
       console.log(park);
