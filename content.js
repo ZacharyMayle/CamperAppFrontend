@@ -52,7 +52,7 @@ function someFunction() {
     .then(park => {
       console.log(park);
       let h3 = document.createElement("h3");
-      h3.innerText = park.name;
+      h3.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`
       campContentInfo.append(h3);
 
       if (park.campgrounds.length != 0) {

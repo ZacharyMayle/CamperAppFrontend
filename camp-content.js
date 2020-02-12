@@ -7,6 +7,6 @@ fetch(`http://localhost:3000/campgrounds/${query}`)
     .then(campground => {
         console.log(campground)
         let li = document.createElement('li')
-        li.innerHTML = `${campground.name} <p class="camp-description">${campground.description}</p>`
+        li.innerHTML = `<h3>${campground.name}</h3> <p class="camp-description">${campground.description} \n\nTotal Sites: ${campground.total_sites}</p>`
         campgroundInfo.appendChild(li)
     })
