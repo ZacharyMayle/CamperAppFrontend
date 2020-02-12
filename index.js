@@ -33,6 +33,7 @@ document.getElementById("newUser").addEventListener("click", function() {
 
 
 //            Controls for the hamburger
+
 function myFunction(x) {
     x.classList.toggle("change");
   }
