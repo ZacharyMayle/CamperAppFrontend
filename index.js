@@ -42,8 +42,5 @@ function myFunction(x) {
     const div = document.getElementById("dropdown")
     div.style.visibility = 
       div.style.visibility == "hidden" ? "visible" : "hidden"
-    // div.class = "buttonBlock"
-    // dropdown.appendChild(div)
-
   }
 
