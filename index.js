@@ -16,7 +16,7 @@ fetch("http://localhost:3000/users")
     // console.log(users)
     users.map(user => {
       let li = document.createElement("li");
-      li.innerHTML = `${user.first_name} ${user.last_name}`;
+      li.innerHTML = `<a href="content.html">${user.first_name} ${user.last_name}</a>`;
       userList.append(li);
     });
   });
@@ -36,7 +36,7 @@ document.getElementById("newUser").addEventListener("click", function() {
 
 
 function myFunction(x) {
-  const dropdown = document.querySelector("#dropdown") 
+  // const dropdown = document.querySelector("#dropdown") 
     x.classList.toggle("change")
 
     const div = document.getElementById("dropdown")
