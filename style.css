@@ -51,7 +51,7 @@ header .container #logoContent {
 #logoContent {
   display: flex;
 
-  margin-left: 35%;
+  margin-left: 38%;
 }
 
 #hamburger {
@@ -103,21 +103,58 @@ header .container #logoContent {
 
 /*                        ----Main Conntent Style---                          */
 
-#content {
+#content-wrapper {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 20rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 50px; */
+}
+
+.content {
+  display: block;
+  background-color:red;
+  width: 30%;
+  height: 30%;
+  /* max-height: 10%; */
+  /* margin: 5%; */
+  /* text-align: center; */
+  /* padding: 30px; */
+  margin: 30px;
+}
+
+/* #user .content {
+  height: 30%;
+} */
+
+/* #parks .content{
+  max-height: 20px;
+} */
+
+#content-info{
+  text-align: left;
+  padding-left: 0px;
+  background-color: white;
+  padding-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+  overflow: scroll;
+  max-height: 80%;
+}
+
+
+#content-info li {
+  padding-bottom: 10px;
 }
 
 #user-info {
   background-color: white;
   padding: 5rem;
+  flex-wrap: inherit;
 }
 
-#content-info {
-  background-color: white;
-  padding: 5rem;
-}
+
 
 #campground-info {
   background-color: white;
