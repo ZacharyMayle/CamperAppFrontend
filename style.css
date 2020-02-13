@@ -9,6 +9,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow-y:scroll;
+  overflow: -moz-scrollbars-vertical;
 }
 
 body {
@@ -18,7 +20,10 @@ body {
 
 /*             HEADER SECTION                */
 
-#mapid { height: 180px; }
+#mapid { 
+  height: 50rem; 
+  width: 50rem;
+}
 
 header {
   background-color: rgba(247, 224, 150, 0.849);
@@ -34,6 +39,11 @@ header {
   /* justify-content: center; */
   /* align-content: center; */
 }
+
+input {
+  box-sizing:border-box
+}
+
 
 .container {
   max-width: 100%;
@@ -82,17 +92,13 @@ header .container #logoContent {
   background-color:rgba(247, 247, 240, 0.774) 
 }
 
-#user-info li {
-  padding: 2rem;
-  padding-left: 0;
-  margin: 1rem;
-  background-color:rgba(247, 247, 240, 0.774)
-}
+
 
 #content-info li {
   background-color: rgba(247, 247, 240, 0.774);
   margin: 2rem;
-  margin-left: 0;
+  padding-left: 5px;
+  /* margin-left: 0; */
 }
 
 /*               END OF HEADER SECTION                 */
@@ -142,29 +148,40 @@ header .container #logoContent {
   margin: 30px;
 }
 
-/* #user .content {
-  height: 30%;
-} */
+#aTagInContentInfo {
+  padding-top: 1rem;
+}
 
-/* #parks .content{
-  max-height: 20px;
-} */
+.title{
+  font-size: 20px;
+  padding: .5rem;
+  font-weight: 900;
+}
+
+#addReservation {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0rem;
+}
 
 #content-info{
   text-align: left;
   padding-left: 0px;
   background-color:  rgba(247, 224, 150, 0.849);
   padding-top: 3rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-right: 4rem;
   padding-bottom: 3rem;
-  overflow: scroll;
-  max-height: 80%;
+  overflow-y: auto;
+  max-height: 40rem;
 }
 
 
 #content-info li {
   padding-bottom: 10px;
+  padding-top: 5px;
 
 }
 
@@ -174,6 +191,21 @@ header .container #logoContent {
   flex-wrap: inherit;
 }
 
+#user-info li {
+  padding: 2rem;
+  padding-left: .5rem;
+  margin: 1rem;
+  background-color:rgba(247, 247, 240, 0.774);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+#user-info li input {
+  max-width: 80%;
+  margin: 5px
+}
 
 
 #campground-info {
@@ -237,4 +269,12 @@ p {
   display: flexbox;
   background-color: rgba(247, 224, 150, 0.849);
   max-width: 20%;
+}
+
+#homeButton {
+  padding: 1rem;
+  max-width: 5rem;
+  margin: 0;
+  padding-right: -5rem;
+  display: flex;
 }
