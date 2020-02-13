@@ -20,6 +20,8 @@ body {
 
 /*             HEADER SECTION                */
 
+#mapid { height: 180px; }
+
 header {
   background-color: rgba(247, 224, 150, 0.849);
   backdrop-filter: blur(5px);
