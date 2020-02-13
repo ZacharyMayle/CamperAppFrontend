@@ -39,7 +39,7 @@ fetch("http://localhost:3000/parks")
       `;
 
       li1.innerHTML = `
-        <a href ='camping-page.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+        <a href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
 
       li1.class = "li-1";
