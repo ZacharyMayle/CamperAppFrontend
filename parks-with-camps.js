@@ -3,7 +3,6 @@ const searchParams = new URLSearchParams(window.location.search);
 const query_id = searchParams.get("id");
 
 function myFunction(x) {
-  // const dropdown = document.querySelector("#dropdown")
   x.classList.toggle("change");
 
   const div = document.getElementById("dropdown");

@@ -76,9 +76,21 @@ header .container #logoContent {
   background-color: brown;
 }
 
+#addReservation{
+  background-color:rgba(247, 247, 240, 0.774) 
+}
+
 #user-info li {
   padding: 2rem;
   padding-left: 0;
+  margin: 1rem;
+  background-color:rgba(247, 247, 240, 0.774)
+}
+
+#content-info li {
+  background-color: rgba(247, 247, 240, 0.774);
+  margin: 2rem;
+  margin-left: 0;
 }
 
 /*               END OF HEADER SECTION                 */
@@ -118,7 +130,7 @@ header .container #logoContent {
 
 .content {
   display: block;
-  background-color:red;
+  /* background-color:red; */
   width: 30%;
   height: 30%;
   /* max-height: 10%; */
@@ -139,7 +151,7 @@ header .container #logoContent {
 #content-info{
   text-align: left;
   padding-left: 0px;
-  background-color: white;
+  background-color:  rgba(247, 224, 150, 0.849);
   padding-top: 3rem;
   padding-left: 1rem;
   padding-right: 4rem;
@@ -151,10 +163,11 @@ header .container #logoContent {
 
 #content-info li {
   padding-bottom: 10px;
+
 }
 
 #user-info {
-  background-color: white;
+  background-color: rgba(160, 159, 156, 0.705);
   padding: 5rem;
   flex-wrap: inherit;
 }
