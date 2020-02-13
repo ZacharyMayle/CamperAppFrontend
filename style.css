@@ -20,7 +20,10 @@ body {
 
 /*             HEADER SECTION                */
 
-#mapid { height: 180px; }
+#mapid { 
+  height: 50rem; 
+  width: 50rem;
+}
 
 header {
   background-color: rgba(247, 224, 150, 0.849);
