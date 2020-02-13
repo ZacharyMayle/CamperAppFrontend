@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="icono.min.css">
   </head>
@@ -36,19 +42,7 @@
     <div id="dropdown" style="visibility:hidden;">
       <div id="homeButton">
         <a href="http://localhost:3001">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="64"
-            height="64"
-            viewBox="0 0 50 50"
-            style=" fill:#000000;"
-          >
-            <path
-              d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z"
-            ></path>
-          </svg>
+          <i class="fa fa-home" style="font-size:64px; color:black;"></i>
         </a>
       </div>
     </div>
@@ -64,7 +58,7 @@
         <ul id="content-info"></ul>
       </div> -->
       <div id="park-with-campgrounds" style="visibility:visible;">
-        <h3>Campgrounds Inside this Park!</h3>
+        <h3>Park Information</h3>
         <ul id="camp-content-info"></ul>
       </div>
     </main>
