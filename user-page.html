@@ -40,10 +40,34 @@
     <!--                          Hamburger END                                -->
 
     <main id="content-wrapper">
-      <div class="content" id="user">
+      <div class="content">
         <h3>Current Camping Reservations</h3>
         <ul id="user-info">
-          <!-- <input type="number" name="" placeholder="Duration" id=""> -->
+          <form action="http://localhost:3000/user_campgrounds" method="post">
+            <label for="user_id"></label>
+            <input
+              style="visibility:hidden;"
+              type="text"
+              name="user_id"
+              id="user"
+              value="hey"
+            />
+            <label for="camping_duration"></label>
+            <input
+              type="number"
+              name="camping_duration"
+              id="camping_duration"
+              placeholder="Duration of Stay"
+            />
+
+            <select name="campground_id" id="campground-dropdown">
+              <option value="" selected disabled hidden
+                >Choose Campground</option
+              >
+            </select>
+
+            <input type="submit" value="Add" />
+          </form>
         </ul>
       </div>
       <div class="content" id="parks" style="visibility:visible;">
