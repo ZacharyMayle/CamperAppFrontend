@@ -21,8 +21,11 @@ body {
 /*             HEADER SECTION                */
 
 #mapid { 
-  height: 50rem; 
-  width: 50rem;
+  height: 40rem; 
+  width: 40rem;
+  border-width: 4px;
+  border-style: solid;
+  border-color: brown;
 }
 
 header {

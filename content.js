@@ -5,10 +5,6 @@ const searchParams = new URLSearchParams(window.location.search);
 const query_user = searchParams.get("user_id");
 const query_id = searchParams.get("id");
 
-// function filterUserReservations(res){
-//   let user_res = reservations.filter(reservation => {
-//     return reservation.user_id==query_user
-// }
 fetch("http://localhost:3000/user_campgrounds/")
   .then(response => response.json())
   .then(reservations => {

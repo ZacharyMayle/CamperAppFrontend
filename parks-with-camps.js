@@ -1,7 +1,19 @@
 const campContentInfo = document.getElementById("camp-content-info");
 const searchParams = new URLSearchParams(window.location.search);
 const query_id = searchParams.get("id");
+const getGoBackButton = document.getElementById("goBack");
 
+// Creates a back button for users looking at Parks!------------------>
+getGoBackButton.addEventListener("click", goBackHistory);
+
+function goBackHistory() {
+  window.history.back();
+}
+// end of button JS---------------->
+
+
+
+// Hamburger Function --------------->
 function myFunction(x) {
   x.classList.toggle("change");
 
@@ -9,7 +21,11 @@ function myFunction(x) {
   div.style.visibility =
     div.style.visibility == "hidden" ? "visible" : "hidden";
 }
+// end of Hamburger --------------->
 
+
+
+// Fetch Park info! --------------------
 fetch(`http://localhost:3000/parks/${query_id}`)
   .then(response => response.json())
   .then(park => {
@@ -27,3 +43,4 @@ fetch(`http://localhost:3000/parks/${query_id}`)
       });
     }
   });
+// End of Fetch ---------------------------------->
