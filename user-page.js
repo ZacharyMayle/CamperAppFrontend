@@ -1,7 +1,12 @@
 const contentInfo = document.getElementById("content-info");
 const userInfo = document.getElementById("user-info");
+const campgroundDropDown = document.getElementById("campground-dropdown")
+const userHiddenInputForm = document.getElementById("user")
 const searchParams = new URLSearchParams(window.location.search);
 const query_user = searchParams.get("user_id");
+
+
+userHiddenInputForm.value = query_user
 
 function myFunction(x) {
   x.classList.toggle("change");
@@ -18,7 +23,7 @@ function checkIfEmpty(array) {
   } else {
     let li = document.createElement("li");
     li.innerText = `No Current Reservations. Use Park List to navigate possible Campground Reservations!`;
-    userInfo.appendChild(li);
+    userInfo.prepend(li);
   }
 }
 
@@ -29,7 +34,7 @@ function mapIntoListItems(array) {
     li.dataset.id = stays.id;
     li.dataset.duration = stays.camping_duration;
     li.id = stays.id;
-    userInfo.appendChild(li);
+    userInfo.prepend(li);
     let list_item = document.getElementById(stays.id);
     return list_item;
   });
@@ -44,8 +49,9 @@ fetch("http://localhost:3000/user_campgrounds/")
     });
     let return_list_items = checkIfEmpty(user_res);
     user_res.map(reservation => {
+      // console.log(reservation)
       let form = document.createElement("form");
-      form.action = `http://localhost:3000/user_campgrounds/${reservation.user_id}`;
+      form.action = `http://localhost:3000/user_campgrounds/${reservation.id}`;
       form.method = "POST";
       form.innerHTML = `
         <input type="number" name="camping_duration" placeholder="Duration of stay">
@@ -59,7 +65,7 @@ fetch("http://localhost:3000/user_campgrounds/")
     });
     user_res.map(reservation => {
         let form = document.createElement("form");
-        form.action = `http://localhost:3000/user_campgrounds/${reservation.user.id}`;
+        form.action = `http://localhost:3000/user_campgrounds/${reservation.id}`;
         form.method = "POST";
         form.innerHTML = `
             <input type="submit" value="Delete Reservation!" />
@@ -72,6 +78,21 @@ fetch("http://localhost:3000/user_campgrounds/")
     })
   });
 
+fetch("http://localhost:3000/campgrounds")
+  .then(response => response.json())
+  .then(campgrounds => {
+    campgrounds.map(campground=>{
+      // console.log(campground)
+      let option = document.createElement("option");
+
+      option.innerText = campground.name;
+      option.value = campground.id;
+
+      campgroundDropDown.append(option);
+    })
+  })
+
+// -----populate parks info and links with code below---------------------
 fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {

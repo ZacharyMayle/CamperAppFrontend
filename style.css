@@ -76,6 +76,11 @@ header .container #logoContent {
   background-color: brown;
 }
 
+#user-info li {
+  padding: 2rem;
+  padding-left: 0;
+}
+
 /*               END OF HEADER SECTION                 */
 
 /* #searchBarDiv {
