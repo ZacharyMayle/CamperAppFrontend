@@ -2,20 +2,14 @@ fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {
     parks.map(park => {
-        // console.log(park.name, park.designation, park.latlong, park.id)
         let array = park.latlong.split(" ")
-        // console.log("label1", array)
         let split_latlong = array.map(element =>{
             const both = element.split(":")[1]
             return both
         })
-        // console.log(split_latlong)
         const lat = split_latlong[0].substring(0, split_latlong[0].length - 1);
-        // console.log(("latlabel"), lat)
         const long = split_latlong[1];
-        // console.log(("longlabel"), long)
         const latLongArray = [lat, long]
-        console.log(latLongArray)
     
       let li1 = document.createElement("li");
       let li2 = document.createElement("li");
@@ -32,24 +26,35 @@ fetch("http://localhost:3000/parks")
       `;
       li1.class = "li-1";
       li2.class = "li-2";
-    //   console.log(li1, li2);
-      //   contentInfo.appendChild(li1);
-      //   li1.appendChild(li2);
     });
   });
 
 var mymap = L.map("mapid").setView([39.76897, -104.97425], 8);
-L.tileLayer(
-  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: "mapbox/streets-v11",
-    accessToken:
-      "pk.eyJ1IjoiYWpzaGFwcHkiLCJhIjoiY2s2bDE2Y25hMGFjcTNqbnY4c2I2ZDVsciJ9.yD1mgRvqruiHZf6pG_DNJQ"
-  }
-).addTo(mymap);
+// L.tileLayer(
+//   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+//   {
+//     attribution:
+//       'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     maxZoom: 18,
+//     id: "mapbox/streets-v11",
+//     accessToken:
+//       "pk.eyJ1IjoiYWpzaGFwcHkiLCJhIjoiY2s2bDE2Y25hMGFjcTNqbnY4c2I2ZDVsciJ9.yD1mgRvqruiHZf6pG_DNJQ"
+//   }
+// ).addTo(mymap);
+
+var Stamen_TerrainBackground = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 18,
+	ext: 'png'
+}).addTo(mymap);
+
+// var Thunderforest_SpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
+// 	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// 	apikey: '<your apikey>',
+// 	maxZoom: 22
+// }).addTo(mymap);
 
 var marker = L.marker([38.072971, -103.398628])
   .addTo(mymap)

@@ -11,17 +11,24 @@
       href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin=""></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="icono.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="icono.min.css" />
   </head>
   <body>
-
     <header id="header">
       <div class="container">
         <div class="hamburger" onclick="myFunction(this)">
@@ -53,48 +60,47 @@
       <div class="content" id="reservations">
         <h3 class="title" id="reservationsTitle">Current Reservations</h3>
         <div id="reservationsLists">
-          <ul id="user-info">
-          </ul>
+          <ul id="user-info"></ul>
         </div>
         <div id="addReservations">
-        <form
-          action="http://localhost:3000/user_campgrounds"
-          method="post"
-          id="addReservation"
-        >
-          <label for="user_id"></label>
-          <input
-            style="visibility:hidden;"
-            type="text"
-            name="user_id"
-            id="user"
-            value="hey"
-          />
-          <label for="camping_duration"></label>
-          <input
-            type="number"
-            name="camping_duration"
-            id="camping_duration"
-            placeholder="Duration of Stay"
-          />
+          <form
+            action="http://localhost:3000/user_campgrounds"
+            method="post"
+            id="addReservation"
+          >
+            <label for="user_id"></label>
+            <input
+              style="visibility:hidden;"
+              type="text"
+              name="user_id"
+              id="user"
+              value="hey"
+            />
+            <label for="camping_duration"></label>
+            <input
+              type="number"
+              name="camping_duration"
+              id="camping_duration"
+              placeholder="Duration of Stay"
+            />
 
-          <select name="campground_id" id="campground-dropdown">
-            <option value="" selected disabled hidden
-              >Choose Campground</option
-            >
-          </select>
+            <select name="campground_id" id="campground-dropdown">
+              <option value="" selected disabled hidden
+                >Choose Campground</option
+              >
+            </select>
 
-          <input type="submit" value="Add" />
-        </form>
+            <input type="submit" value="Add" />
+          </form>
         </div>
       </div>
-      <div class="content" id="parks" style="visibility:visible;">
+      <!-- <div class="content" id="parks" style="visibility:visible;">
         <h3 class="title">Colorado Parks</h3>
         <ul id="content-info"></ul>
-
-        <!-------------------------- map-------------------------------->
-    <div id="mapid"></div>
-      </div>
+      </div> -->
+      <!-------------------------- map-------------------------------->
+      <div id="mapid"></div>
+      <!-- ----------------------- map ------------------------------->
     </main>
     <script src="./user-page.js"></script>
     <script src="./map.js"></script>

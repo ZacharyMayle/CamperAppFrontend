@@ -11,6 +11,8 @@ function goBackHistory() {
 }
 // end of button JS---------------->
 
+
+
 // Hamburger Function --------------->
 function myFunction(x) {
   x.classList.toggle("change");
@@ -20,6 +22,8 @@ function myFunction(x) {
     div.style.visibility == "hidden" ? "visible" : "hidden";
 }
 // end of Hamburger --------------->
+
+
 
 // Fetch Park info! --------------------
 fetch(`http://localhost:3000/parks/${query_id}`)
