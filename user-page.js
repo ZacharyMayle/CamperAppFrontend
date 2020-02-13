@@ -13,39 +13,52 @@ function myFunction(x) {
 
 function checkIfEmpty(array) {
   if (array.length != 0) {
-    mapIntoListItems(array)
+    list_items_array = mapIntoListItems(array)
+    return list_items_array
   } else {
     let li = document.createElement("li");
     li.innerText = `No Current Reservations. Use Park List to navigate possible Campground Reservations!`;
     userInfo.appendChild(li);
   }
+
 }
 
 function mapIntoListItems (array){
-  array.map(stays => {
+  list_items = array.map(stays => {
     let li = document.createElement("li");
     li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
+    li.dataset.id = stays.id;
+    li.dataset.duration = stays.camping_duration;
+    li.id = stays.id
     userInfo.appendChild(li);
+    let list_item = document.getElementById(stays.id)
+    return list_item
   });
+  return list_items
 }
 
 fetch("http://localhost:3000/user_campgrounds/")
   .then(response => response.json())
   .then(reservations => {
-    console.log(reservations);
     let user_res = reservations
       .filter(reservation => {
         return reservation.user_id == query_user;
       })
-      console.log(user_res)
-      checkIfEmpty(user_res)
-      // .map(stays => {
-      //   console.log("hit");
-      //   console.log(stays);
-      //   let li = document.createElement("li");
-      //   li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
-      //   userInfo.appendChild(li);
-      // });
+      let return_list_items = checkIfEmpty(user_res)
+      user_res.map(reservation => {
+        const form = document.createElement('form');
+        form.action = `http://localhost:3000/user_campgrounds/${reservation.user_id}`
+        form.method = "POST";
+        form.innerHTML = `
+        <input type="number" name="camping_duration" placeholder="Duration of stay">
+        <input type="submit" value="Change Duration" />
+        <input type="hidden" name="_method" value="put" />
+        `
+        let list_item = return_list_items.find(item=>{
+          return item.dataset.id == reservation.id
+        })
+        list_item.append(form)
+      })
   });
 
 fetch("http://localhost:3000/parks")
@@ -61,7 +74,6 @@ fetch("http://localhost:3000/parks")
       li1.innerHTML = `
         <a href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
-
       li1.class = "li-1";
       li2.class = "li-2";
 
