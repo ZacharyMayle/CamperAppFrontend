@@ -14,9 +14,9 @@ fetch(`http://localhost:3000/parks/${query_id}`)
   .then(response => response.json())
   .then(park => {
     console.log(park);
-    let h3 = document.createElement("h3");
-    h3.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`;
-    campContentInfo.append(h3);
+    let h2 = document.createElement("h2");
+    h2.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`;
+    campContentInfo.append(h2);
 
     if (park.campgrounds.length != 0) {
       park.campgrounds.map(campground => {
