@@ -1,4 +1,4 @@
-const campContentInfo = document.getElementById("content-info");
+const campContentInfo = document.getElementById("camp-content-info");
 const searchParams = new URLSearchParams(window.location.search);
 const query_id = searchParams.get("id");
 
@@ -22,7 +22,7 @@ fetch(`http://localhost:3000/parks/${query_id}`)
     if (park.campgrounds.length != 0) {
       park.campgrounds.map(campground => {
         let li = document.createElement("li");
-        li.innerHTML = `<a href=http://localhost:3001/camp-content.html?id=${campground.id}>${campground.name}</a>`;
+        li.innerHTML = `<a href=http://localhost:3001/campground-info-page.html?id=${campground.id}>${campground.name}</a>`;
 
         campContentInfo.appendChild(li);
       });
