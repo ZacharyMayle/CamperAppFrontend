@@ -9,20 +9,21 @@ const query_id = searchParams.get("id");
 //   let user_res = reservations.filter(reservation => {
 //     return reservation.user_id==query_user
 // }
-fetch('http://localhost:3000/user_campgrounds/')
+fetch("http://localhost:3000/user_campgrounds/")
   .then(response => response.json())
   .then(reservations => {
     // console.log(reservations)
-    let user_res = reservations.filter(reservation => {
-      return reservation.user_id==query_user
-    }).map(stays => {
-      console.log(stays)
-      let li = document.createElement('li')
-      li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`
-      userInfo.appendChild(li)
-    })
-  })
-
+    let user_res = reservations
+      .filter(reservation => {
+        return reservation.user_id == query_user;
+      })
+      .map(stays => {
+        console.log(stays);
+        let li = document.createElement("li");
+        li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
+        userInfo.appendChild(li);
+      });
+  });
 
 fetch("http://localhost:3000/parks")
   .then(response => response.json())

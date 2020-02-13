@@ -28,7 +28,7 @@ fetch("http://localhost:3000/user_campgrounds/")
       });
   });
 
-  fetch("http://localhost:3000/parks")
+fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {
     parks.map(park => {
@@ -39,7 +39,7 @@ fetch("http://localhost:3000/user_campgrounds/")
       `;
 
       li1.innerHTML = `
-        <a href ='content.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+        <a href ='camping-page.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
 
       li1.class = "li-1";
