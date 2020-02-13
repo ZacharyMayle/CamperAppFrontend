@@ -53,10 +53,11 @@ fetch("http://localhost:3000/user_campgrounds/")
       let form = document.createElement("form");
       form.action = `http://localhost:3000/user_campgrounds/${reservation.id}`;
       form.method = "POST";
-      form.innerHTML = `
+      form.innerHTML = `<div class="reservationLiButtons">
         <input type="number" name="camping_duration" placeholder="Duration of stay">
         <input type="submit" value="Change Duration" />
         <input type="hidden" name="_method" value="put" />
+        </div>
         `;
       let list_item = return_list_items.find(item => {
         return item.dataset.id == reservation.id;
@@ -104,7 +105,7 @@ fetch("http://localhost:3000/parks")
       `;
 
       li1.innerHTML = `
-        <a href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+        <a class="aTagInContentInfo" href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
       li1.class = "li-1";
       li2.class = "li-2";
