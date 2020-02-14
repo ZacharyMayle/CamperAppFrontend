@@ -94,23 +94,23 @@ fetch("http://localhost:3000/campgrounds")
   })
 
 // -----populate parks info and links with code below---------------------
-fetch("http://localhost:3000/parks")
-  .then(response => response.json())
-  .then(parks => {
-    parks.map(park => {
-      let li1 = document.createElement("li");
-      let li2 = document.createElement("li");
-      li2.innerText = `
-        Campgrounds Available: ${park.campgrounds.length}
-      `;
+// fetch("http://localhost:3000/parks")
+//   .then(response => response.json())
+//   .then(parks => {
+//     parks.map(park => {
+//       let li1 = document.createElement("li");
+//       let li2 = document.createElement("li");
+//       li2.innerText = `
+//         Campgrounds Available: ${park.campgrounds.length}
+//       `;
 
-      li1.innerHTML = `
-        <a class="aTagInContentInfo" href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
-      `;
-      li1.class = "li-1";
-      li2.class = "li-2";
+//       li1.innerHTML = `
+//         <a class="aTagInContentInfo" href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+//       `;
+//       li1.class = "li-1";
+//       li2.class = "li-2";
 
-      contentInfo.appendChild(li1);
-      li1.appendChild(li2);
-    });
-  });
+//       contentInfo.appendChild(li1);
+//       li1.appendChild(li2);
+//     });
+//   });
