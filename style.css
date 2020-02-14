@@ -26,18 +26,17 @@ body {
 }
 
 header {
-  background-color: rgba(247, 224, 150, 0.849);
+  /* background-color: rgba(247, 224, 150, 0.849); */
   backdrop-filter: blur(5px);
   /* display: flexbox; */
   position: -webkit-sticky;
   position: sticky;
   /* top: 20px; */
   overflow: hidden;
-  /* flex-flow: row; */
-  /* padding: 20px 10px; */
-  /* padding: 1%; */
-  /* justify-content: center; */
-  /* align-content: center; */
+  /* background: #FF0303; */
+  /* background: -moz-linear-gradient(45deg, #FF0303 0%, #FFC000 68%, #FDFF0E 100%); */
+/* background: -webkit-linear-gradient(45deg, #FF0303 0%, #FFC000 68%, #FDFF0E 100%); */
+  background: linear-gradient(45deg, rgba(255, 3, 3, 0.856) 0%, rgba(255, 191, 0, 0.856) 68%, rgba(255, 255, 14, 0.856) 100%);
 }
 
 input {
@@ -60,6 +59,9 @@ a:visited {
   padding: 10px;
   margin: 0 auto;
 }
+
+
+
 
 header .container {
   display: flex;
@@ -115,7 +117,7 @@ header .container #logoContent {
 
 
 
-#content-info li {
+#camp-content-div li {
   background-color: rgba(247, 247, 240, 0.774);
   margin: 2rem;
   padding-left: 5px;
@@ -177,6 +179,8 @@ header .container #logoContent {
   font-size: 20px;
   padding: .5rem;
   font-weight: 900;
+  color: rgb(34, 33, 33);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.29);
 }
 
 #addReservation {
@@ -188,7 +192,7 @@ header .container #logoContent {
   padding-top: 0rem;
 }
 
-#content-info{
+#camp-content-div{
   text-align: left;
   padding-left: 0px;
   background-color:  rgba(247, 224, 150, 0.849);
@@ -198,14 +202,19 @@ header .container #logoContent {
   padding-bottom: 3rem;
   overflow-y: auto;
   max-height: 40rem;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1%;
+  margin-top: 0%;
+}
+
+.specific-camp-name-h3{
+  margin-left: 1%;
+  margin-right: 1%;
+  display: flexbox;
 }
 
 
-#content-info li {
-  padding-bottom: 10px;
-  padding-top: 5px;
-
-}
 
 #user-info {
   background-color: rgba(160, 159, 156, 0.705);
@@ -250,6 +259,14 @@ background-color: red;
 #camp-content-info {
   background-color: white;
   padding: 5rem;
+}
+
+#camp-content-info h2{
+  font-size: 20px;
+}
+
+#camp-content-info h2 p{
+  font-size: 15px;
 }
 
 h3 {
@@ -303,9 +320,11 @@ p {
 #dropdown {
   position: relative;
   display: flexbox;
-  background-color: rgba(247, 224, 150, 0.849);
+  /* background-color: rgba(129, 127, 127, 0.849); */
+  background: linear-gradient(45deg, rgba(255, 3, 3, 0.856) 0%, rgb(255, 94, 0,0.856) 100%);
   max-width: 20%;
   max-height: 6.6rem;
+
 }
 
 
@@ -334,4 +353,28 @@ p {
   padding: 1rem;
   font-weight: 900;
   font-size: 28px;
+}
+
+#content-info{
+  text-align: left;
+  padding-left: 0px;
+  background-color:  rgba(247, 224, 150, 0.849);
+  padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+  overflow-y: auto;
+  max-height: 40rem;
+}
+
+#content-info li {
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+#content-info li {
+  background-color: rgba(247, 247, 240, 0.774);
+  margin: 2rem;
+  padding-left: 5px;
+  /* margin-left: 0; */
 }
