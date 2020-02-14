@@ -115,3 +115,18 @@ fetch(`http://localhost:3000/campgrounds/${query}`)
     li.className = "laundry-list"
     campgroundInfo.prepend(li);
   });
+
+  fetch(`http://localhost:3000/campgrounds/${query}`)
+  .then(response => response.json())
+  .then(campground => {
+    console.log(campground);
+    let li = document.createElement("li");
+    if (campground.big_foot_sightings == true){
+      li.innerHTML = `<h3 id="big-foot-sightings">Big Foot Sightings</h3> <p class="big-foot-description">Ready those cameras! Bigfoot has been sighted here!</p>`;
+      li.className = "big-foot-info"
+    } else {
+      li.innerHTML = `<h3 id="big-foot-sightings">Big Foot Sightings</h3> <p class="big-foot-description">No current reports of Bigfoot. Check back for updates!</p>`;
+      li.className = "big-foot-info"
+    }
+    campgroundInfo.prepend(li);
+  });

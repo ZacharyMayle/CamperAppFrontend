@@ -297,6 +297,12 @@ p {
 .li-2 {
   color: red;
 }
+
+.link-tags {
+  margin: 0!important;
+  padding: 0!important;
+} 
+
 /*--------------------------------------------------------------------------------------*/
 
 /*                            -----Hamburger Animation-----                             */
