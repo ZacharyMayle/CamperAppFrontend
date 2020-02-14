@@ -34,8 +34,11 @@ fetch(`http://localhost:3000/parks/${query_id}`)
       p.innerText = "Select from the list of Campgrounds below: ";
       park.campgrounds.map(campground => {
         let li = document.createElement("li");
-        li.innerHTML = `<a href="http://localhost:3001/campground-info-page.html?id=${campground.id}">${campground.name}</a>`;
-        p.append(li)
+
+        li.innerHTML = `<a class="camp-tag" href="http://localhost:3001/campground-info-page.html?id=${campground.id}">${campground.name}</a>`;
+
+        campContentInfo.appendChild(li);
+
       });
     } else if (park.campgrounds.length == []) {
       p.innerText = `This park does not contain any campgrounds at this time. Please check back for updates!`;
