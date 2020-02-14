@@ -26,7 +26,7 @@ body {
   width: 30rem;
   border-width: 4px;
   border-style: solid;
-  border-color: brown;
+  border-color: rgb(230, 54, 23);
 }
 
 header {
@@ -124,12 +124,22 @@ header .container #logoContent {
   padding: 5px;
 }
 
+#reservationsTitle{
+  border: solid 3px rgb(230, 54, 23);
+  outline: 3px rgb(230, 54, 23);
+}
+
+#reservations{
+  margin-top: 0rem;
+  /* margin-right: 15rem; */
+  /* padding: 3rem */
+}
 
 
 #camp-content-div li {
   background-color: rgba(247, 247, 240, 0.774);
   margin: 2rem;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   /* margin-left: 0; */
 }
 
@@ -191,7 +201,7 @@ header .container #logoContent {
   color: rgb(34, 33, 33);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.29);
   -webkit-box-shadow: 3px 4px 1px 0px rgba(0,0,0,0.17); 
-box-shadow: 3px 4px 1px 0px rgba(0,0,0,0.17);
+  box-shadow: 3px 4px 1px 0px rgba(0,0,0,0.17);
 
 }
 
@@ -454,4 +464,40 @@ p {
 
 .camp-tag {
   color: blue!important;
+}
+
+.camp-info-block{
+  margin: 3rem;
+  margin-top: 1rem;
+  display: flexbox;
+  flex-direction: column-reverse;
+  padding: 1rem;
+}
+
+#parks {
+  
+}
+.camp-name-title {
+  margin: .9rem;
+  margin-bottom:0rem;
+  padding:1rem;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(34, 33, 33);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.29);
+  -webkit-box-shadow: 3px 4px 1px 0px rgba(0,0,0,0.17); 
+  box-shadow: 3px 4px 1px 0px rgba(0,0,0,0.17);
+
+}
+
+#camp-content-div h3{
+color: blue;
+}
+
+
+.attr-description{
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
