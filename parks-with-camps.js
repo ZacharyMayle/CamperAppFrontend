@@ -11,8 +11,6 @@ function goBackHistory() {
 }
 // end of button JS---------------->
 
-
-
 // Hamburger Function --------------->
 function myFunction(x) {
   x.classList.toggle("change");
@@ -23,27 +21,31 @@ function myFunction(x) {
 }
 // end of Hamburger --------------->
 
-
-
 // Fetch Park info! --------------------
 fetch(`http://localhost:3000/parks/${query_id}`)
   .then(response => response.json())
   .then(park => {
     console.log(park);
     let h2 = document.createElement("h2");
-    h2.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description} <br> <br> Please select a campsite below: </p>`;
-    campContentInfo.append(h2);
-
-  
-    
-
-    if (park.campgrounds.length != 0) {
+    let p = document.createElement("p");
+    // console.log(park.camgrounds != undefined)
+    h2.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`;
+    console.log(park.campgrounds.length != []);
+    if (park.campgrounds.length != []) {
+      p.innerText = "Select from the list of Campgrounds below: ";
       park.campgrounds.map(campground => {
+        console.log(campground)
         let li = document.createElement("li");
+
         li.innerHTML = `<a class="camp-tag" href="http://localhost:3001/campground-info-page.html?id=${campground.id}">${campground.name}</a>`;
 
         campContentInfo.appendChild(li);
+
       });
+    } else if (park.campgrounds.length == []) {
+      p.innerText = `This park does not contain any campgrounds at this time. Please check back for updates!`;
     }
+    campContentInfo.append(h2);
+    campContentInfo.append(p)
   });
 // End of Fetch ---------------------------------->
