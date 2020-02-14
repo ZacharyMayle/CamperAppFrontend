@@ -28,16 +28,21 @@ fetch(`http://localhost:3000/parks/${query_id}`)
     console.log(park);
     let h2 = document.createElement("h2");
     let p = document.createElement("p");
+    let div = document.createElement('div')
+    div.className = "park-info-div-margin"
     h2.innerHTML = `${park.name} - ${park.designation} <p class="camp-description">${park.description}</p>`;
     console.log(park.campgrounds.length != []);
     if (park.campgrounds.length != []) {
-      p.innerText = "Select from the list of Campgrounds below: ";
+      p.innerText = `Select from the list of Campgrounds below:`;
+      p.id="list-of-camps"
+      p.appendChild(div)
+
       park.campgrounds.map(campground => {
         let li = document.createElement("li");
 
         li.innerHTML = `<a class="camp-tag" href="http://localhost:3001/campground-info-page.html?id=${campground.id}">${campground.name}</a>`;
 
-        p.appendChild(li);
+        div.appendChild(li);
 
       });
     } else if (park.campgrounds.length == []) {

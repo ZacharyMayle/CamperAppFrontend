@@ -286,6 +286,14 @@ background-color: red;
   padding: 5rem;
 }
 
+.park-info-div-margin{
+  margin-top: 1rem;
+  list-style: circle;
+  margin-left: 1.3rem;
+  
+}
+
+
 #camp-content-info h2{
   font-size: 20px;
 }
@@ -501,3 +509,13 @@ color: blue;
   padding-left: 0;
   padding-right: 0;
 }
+
+#goBack {
+  background-color: rgb(34, 33, 33);
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  /* size: auto; */
+  cursor: pointer;
+}
+
