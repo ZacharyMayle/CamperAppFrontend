@@ -37,7 +37,7 @@ fetch(`http://localhost:3000/parks/${query_id}`)
 
         li.innerHTML = `<a class="camp-tag" href="http://localhost:3001/campground-info-page.html?id=${campground.id}">${campground.name}</a>`;
 
-        campContentInfo.appendChild(li);
+        p.appendChild(li);
 
       });
     } else if (park.campgrounds.length == []) {
