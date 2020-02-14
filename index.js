@@ -37,7 +37,17 @@ function myFunction(x) {
   // const dropdown = document.querySelector("#dropdown")
   x.classList.toggle("change");
 
-  const div = document.getElementById("dropdown");
-  div.style.visibility =
-    div.style.visibility == "hidden" ? "visible" : "hidden";
+  const div1 = document.getElementById("dropdown");
+  div1.style.visibility =
+    div1.style.visibility == "hidden" ? "visible" : "hidden";
+
+  // const div2 = document.getElementById("dropdownTop");
+  // div2.style.visibility =
+  // div2.style.visibility == "visible" ? "hidden" : "visible";
+
+  // const div3 = document.getElementById("dropdownBottom");
+  // div3.style.visibility =
+  // div3.style.visibility == "visible" ? "hidden" : "visible";
+      
+  
 }
