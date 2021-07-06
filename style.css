@@ -9,6 +9,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow-y:scroll;
+  overflow: -moz-scrollbars-vertical;
 }
 
 body {
@@ -18,26 +20,51 @@ body {
 
 /*             HEADER SECTION                */
 
+#mapid { 
+  height: 40rem; 
+  width: 40rem;
+  border-width: 4px;
+  border-style: solid;
+  border-color: brown;
+}
+
 header {
-  background-color: rgba(247, 224, 150, 0.849);
+  /* background-color: rgba(247, 224, 150, 0.849); */
   backdrop-filter: blur(5px);
   /* display: flexbox; */
   position: -webkit-sticky;
   position: sticky;
   /* top: 20px; */
   overflow: hidden;
-  /* flex-flow: row; */
-  /* padding: 20px 10px; */
-  /* padding: 1%; */
-  /* justify-content: center; */
-  /* align-content: center; */
+  /* background: #FF0303; */
+  /* background: -moz-linear-gradient(45deg, #FF0303 0%, #FFC000 68%, #FDFF0E 100%); */
+/* background: -webkit-linear-gradient(45deg, #FF0303 0%, #FFC000 68%, #FDFF0E 100%); */
+  background: linear-gradient(45deg, rgba(255, 3, 3, 0.856) 0%, rgba(255, 191, 0, 0.856) 68%, rgba(255, 255, 14, 0.856) 100%);
 }
+
+input {
+  box-sizing:border-box
+}
+
+a:link {
+  color:black;
+  text-decoration: none;
+}
+
+a:visited {
+  color:black;
+  text-decoration: none;
+}
+
 
 .container {
   max-width: 100%;
-  padding: 20px;
+  padding: 10px;
   margin: 0 auto;
 }
+
+
+
 
 header .container {
   display: flex;
@@ -50,7 +77,6 @@ header .container #logoContent {
 
 #logoContent {
   display: flex;
-
   margin-left: 38%;
 }
 
@@ -61,19 +87,44 @@ header .container #logoContent {
 
 #logo {
   float: left;
+  height: 70px
 }
 
 #appName {
   font-family: "Fugaz One", cursive;
   font-size: 2rem;
-  margin-top: 10px;
+  margin-top: 20px;
   float: right;
+  text-shadow: 2px 2px 2px rgba(224, 13, 13, 0.36);
   /* vertical-align: middle; */
   /* display: inline-flex; */
 }
 
 #modalBox {
-  background-color: brown;
+  background-color:white;
+  
+}
+
+#modalBox ul li{
+  margin-top: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  background-color:rgb(238, 238, 238);
+  -webkit-box-shadow: 4px 4px 11px 0px rgba(73,73,73,0.59); 
+  box-shadow: 4px 4px 11px 0px rgba(73,73,73,0.59);
+}
+
+#addReservation{
+  background-color:rgba(247, 247, 240, 0.774) 
+}
+
+
+
+#camp-content-div li {
+  background-color: rgba(247, 247, 240, 0.774);
+  margin: 2rem;
+  padding-left: 5px;
+  /* margin-left: 0; */
 }
 
 /*               END OF HEADER SECTION                 */
@@ -113,7 +164,7 @@ header .container #logoContent {
 
 .content {
   display: block;
-  background-color:red;
+  /* background-color:red; */
   width: 30%;
   height: 30%;
   /* max-height: 10%; */
@@ -123,37 +174,84 @@ header .container #logoContent {
   margin: 30px;
 }
 
-/* #user .content {
-  height: 30%;
-} */
+#aTagInContentInfo {
+  padding-top: 1rem;
+}
 
-/* #parks .content{
-  max-height: 20px;
-} */
+.title{
+  font-size: 20px;
+  padding: .5rem;
+  font-weight: 900;
+  color: rgb(34, 33, 33);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.29);
+}
 
-#content-info{
+#addReservation {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: left;
+  padding: 1rem;
+  padding-top: 0rem;
+}
+
+#camp-content-div{
   text-align: left;
   padding-left: 0px;
-  background-color: white;
+  background-color:  rgba(247, 224, 150, 0.849);
   padding-top: 3rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-right: 4rem;
   padding-bottom: 3rem;
-  overflow: scroll;
-  max-height: 80%;
+  overflow-y: auto;
+  max-height: 40rem;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1%;
+  margin-top: 0%;
+}
+
+.specific-camp-name-h3{
+  margin-left: 1%;
+  margin-right: 1%;
+  display: flexbox;
 }
 
 
-#content-info li {
-  padding-bottom: 10px;
-}
 
 #user-info {
-  background-color: white;
-  padding: 5rem;
+  background-color: rgba(160, 159, 156, 0.705);
+  padding: 2rem;
   flex-wrap: inherit;
+  max-height: 10rem;
+  overflow-y: scroll;
+  flex-direction: column-reverse;
+  display: flex;
 }
 
+#reservationsList {
+  display: flex;
+  flex-direction: column;
+}
+
+#reservationsList ul li{
+background-color: red;
+}
+
+#user-info li {
+  padding: 2rem;
+  padding-left: .5rem;
+  margin: 1rem;
+  background-color:rgba(247, 247, 240, 0.774);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#user-info li input {
+  max-width: 80%;
+  margin: 5px
+}
 
 
 #campground-info {
@@ -164,6 +262,14 @@ header .container #logoContent {
 #camp-content-info {
   background-color: white;
   padding: 5rem;
+}
+
+#camp-content-info h2{
+  font-size: 20px;
+}
+
+#camp-content-info h2 p{
+  font-size: 15px;
 }
 
 h3 {
@@ -196,11 +302,13 @@ p {
   background-color: #333;
   margin: 6px 0;
   transition: 0.4s;
+  box-shadow: 2.5px 1px 0px 0px rgba(224, 13, 13, 0.36);
 }
 
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
+  box-shadow: 2.5px 1px 0px 0px rgba(224, 13, 13, 0.36);
 }
 
 .change .bar2 {
@@ -215,6 +323,61 @@ p {
 #dropdown {
   position: relative;
   display: flexbox;
-  background-color: rgba(247, 224, 150, 0.849);
+  /* background-color: rgba(129, 127, 127, 0.849); */
+  background: linear-gradient(45deg, rgba(255, 3, 3, 0.856) 0%, rgb(255, 94, 0,0.856) 100%);
   max-width: 20%;
+  max-height: 6.6rem;
+
+}
+
+
+#modalForm {
+  margin: 5px;
+  display: flexbox;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#homeButton {
+  padding: 1rem;
+  max-width: 5rem;
+  margin: 0;
+  padding-right: -5rem;
+  display: flex;
+}
+
+#park-with-campgrounds{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+#park-with-campgrounds h3{
+  padding: 1rem;
+  font-weight: 900;
+  font-size: 28px;
+}
+
+#content-info{
+  text-align: left;
+  padding-left: 0px;
+  background-color:  rgba(247, 224, 150, 0.849);
+  padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+  overflow-y: auto;
+  max-height: 40rem;
+}
+
+#content-info li {
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+#content-info li {
+  background-color: rgba(247, 247, 240, 0.774);
+  margin: 2rem;
+  padding-left: 5px;
+  /* margin-left: 0; */
 }

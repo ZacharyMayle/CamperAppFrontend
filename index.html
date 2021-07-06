@@ -7,10 +7,7 @@
 
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat:200,400,500,500i,600,800,900i&display=swap" rel="stylesheet">
   </head>
   <body>
     <header id="header">
@@ -30,9 +27,9 @@
         </div>
       </div>
     </header>
-    <!--                         Hamburger Buttons                            -->
+
     <div id="dropdown" style="visibility:hidden;">
-      <!--                         New User Button                              -->
+      <div id="dropdownTop">
       <button id="newUser">New User</button>
       <form
         action="http://localhost:3000/users"
@@ -60,7 +57,10 @@
 
         <input type="submit" value="Submit" />
       </form>
-      <!--                                Existing User Button                                -->
+      </div>
+  
+
+      <div id="dropdownBottom">
       <button id="existingUser">Existing User</button>
       <div id="modalBox" style="visibility:hidden;">
         <ul id="list"></ul>

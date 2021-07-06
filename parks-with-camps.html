@@ -11,6 +11,14 @@
       href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="icono.min.css">
   </head>
   <body>
     <header id="header">
@@ -32,26 +40,20 @@
     </header>
     <!--                         Hamburger Buttons                            -->
     <div id="dropdown" style="visibility:hidden;">
-      <p>
-        lorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsumlorem Ipsum Add
-        some navigation buttons ya dumbb!!
-      </p>
+      <div id="homeButton">
+        <a href="http://localhost:3001">
+          <i class="fa fa-home" style="font-size:64px; color:black;"></i>
+        </a>
+      </div>
     </div>
     <!--                          Hamburger END                                -->
 
     <main id="content">
-      <!-- <div>
-        <h3>Current Camping Reservations</h3>
-        <ul id="user-info"></ul>
-      </div> -->
-      <!-- <div id="parks" style="visibility:visible;">
-        <h3>Campgrounds</h3>
-        <ul id="content-info"></ul>
-      </div> -->
       <div id="park-with-campgrounds" style="visibility:visible;">
-          <h3>Campgrounds Inside this Park!</h3>
-          <ul id="camp-content-info"></ul>
-        </div>
+      </div id="content-title"><h3 class="title">Park Information</h3></div>
+        <ul id="camp-content-info"></ul>
+        <input type="button" value="Back to User Page" id="goBack">
+      </div>
     </main>
     <script src="./parks-with-camps.js"></script>
   </body>

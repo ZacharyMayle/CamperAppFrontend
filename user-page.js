@@ -1,7 +1,12 @@
 const contentInfo = document.getElementById("content-info");
 const userInfo = document.getElementById("user-info");
+const campgroundDropDown = document.getElementById("campground-dropdown")
+const userHiddenInputForm = document.getElementById("user")
 const searchParams = new URLSearchParams(window.location.search);
 const query_user = searchParams.get("user_id");
+
+
+userHiddenInputForm.value = query_user
 
 function myFunction(x) {
   x.classList.toggle("change");
@@ -13,41 +18,82 @@ function myFunction(x) {
 
 function checkIfEmpty(array) {
   if (array.length != 0) {
-    mapIntoListItems(array)
+    list_items_array = mapIntoListItems(array);
+    return list_items_array;
   } else {
     let li = document.createElement("li");
     li.innerText = `No Current Reservations. Use Park List to navigate possible Campground Reservations!`;
-    userInfo.appendChild(li);
+    userInfo.prepend(li);
   }
 }
 
-function mapIntoListItems (array){
-  array.map(stays => {
+function mapIntoListItems(array) {
+  list_items = array.map(stays => {
     let li = document.createElement("li");
     li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
-    userInfo.appendChild(li);
+    li.dataset.id = stays.id;
+    li.dataset.duration = stays.camping_duration;
+    li.id = stays.id;
+    userInfo.prepend(li);
+    let list_item = document.getElementById(stays.id);
+    return list_item;
   });
+  return list_items;
 }
 
 fetch("http://localhost:3000/user_campgrounds/")
   .then(response => response.json())
   .then(reservations => {
-    console.log(reservations);
-    let user_res = reservations
-      .filter(reservation => {
-        return reservation.user_id == query_user;
-      })
-      console.log(user_res)
-      checkIfEmpty(user_res)
-      // .map(stays => {
-      //   console.log("hit");
-      //   console.log(stays);
-      //   let li = document.createElement("li");
-      //   li.innerText = `${stays.campground.name} - Duration of Camping: ${stays.camping_duration}`;
-      //   userInfo.appendChild(li);
-      // });
+    let user_res = reservations.filter(reservation => {
+      return reservation.user_id == query_user;
+    });
+    let return_list_items = checkIfEmpty(user_res);
+    user_res.map(reservation => {
+      // console.log(reservation)
+      let form = document.createElement("form");
+      form.action = `http://localhost:3000/user_campgrounds/${reservation.id}`;
+      form.method = "POST";
+      form.innerHTML = `<div class="reservationLiButtons">
+        <input type="number" name="camping_duration" placeholder="Duration of stay">
+        <input type="submit" value="Change Duration" />
+        <input type="hidden" name="_method" value="put" />
+        </div>
+        `;
+      let list_item = return_list_items.find(item => {
+        return item.dataset.id == reservation.id;
+      });
+      list_item.append(form);
+    });
+    user_res.map(reservation => {
+        let form = document.createElement("form");
+        form.action = `http://localhost:3000/user_campgrounds/${reservation.id}`;
+        form.method = "POST";
+        form.innerHTML = `
+            <input type="submit" value="Delete Reservation!" />
+            <input type="hidden" name="_method" value="delete" />
+        `;
+        let list_item = return_list_items.find(item => {
+          return item.dataset.id == reservation.id;
+        });
+        list_item.append(form)
+    })
   });
 
+fetch("http://localhost:3000/campgrounds")
+  .then(response => response.json())
+  .then(campgrounds => {
+    campgrounds.map(campground=>{
+      // console.log(campground)
+      let option = document.createElement("option");
+
+      option.innerText = campground.name;
+      option.value = campground.id;
+
+      campgroundDropDown.append(option);
+    })
+  })
+
+// -----populate parks info and links with code below---------------------
 fetch("http://localhost:3000/parks")
   .then(response => response.json())
   .then(parks => {
@@ -59,9 +105,8 @@ fetch("http://localhost:3000/parks")
       `;
 
       li1.innerHTML = `
-        <a href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
+        <a class="aTagInContentInfo" href ='parks-with-camps.html?id=${park.id}'> ${park.name} - ${park.designation}</a> 
       `;
-
       li1.class = "li-1";
       li2.class = "li-2";
 
